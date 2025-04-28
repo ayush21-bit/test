@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Rental</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <h1>Rentify</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="search">
+  <input type="text" id="searchInput" placeholder="Search properties...">
+  <button onclick="searchProperties()">Search</button>
+</section>
+
+<section class="properties container">
+  <div class="property-card" id="property1">
+    <img src="https://via.placeholder.com/300" alt="Property Image">
+    <div class="property-info">
+      <!-- Title Field for Owner to Edit -->
+      <h3>Title: <input type="text" id="title1" value="2 BHK Flat" placeholder="Enter Property Title"></h3>
+
+      <!-- Location Field for Owner to Edit -->
+      <p>Location: <input type="text" id="location1" value="New Delhi, Sector 12" placeholder="Enter Property Location"></p>
+
+      <!-- BHK Selection for Owner -->
+      <div class="bhk-selection">
+        <label for="bhk1">Number of BHK:</label>
+        <select id="bhk1">
+          <option value="1">1 BHK</option>
+          <option value="2">2 BHK</option>
+          <option value="3">3 BHK</option>
+          <option value="4">4 BHK</option>
+        </select>
+      </div>
+
+      <!-- Phone Number Field for Owner -->
+      <div class="owner-phone">
+        <label for="ownerPhone1">Owner Phone Number:</label>
+        <input type="text" id="ownerPhone1" value="9876543210" placeholder="Enter Owner's Phone Number">
+      </div>
+
+      <div class="owner-details">
+        <p><strong>Owner UPI:</strong> <input type="text" id="upi1" value="owner@upi" placeholder="Enter Owner's UPI"></p>
+        <div class="commission-qr">
+          <p><strong>Send 5% Commission:</strong></p>
+          <img src="d7936174-8290-4887-936d-a614ae90ed11.jpg" alt="Commission QR" class="qr-image">
+        </div>
+      </div>
+
+      <!-- Rent Field for Owner -->
+      <div class="rent">
+        <label>Rent (per month)</label>
+        <input type="number" id="rent1" value="15000" placeholder="Enter Rent">
+      </div>
+
+      <!-- View Details Button -->
+      <button class="details-btn" onclick="viewDetails(
+        document.getElementById('title1').value, 
+        document.getElementById('location1').value, 
+        document.getElementById('rent1').value, 
+        document.getElementById('bhk1').value, 
+        document.getElementById('ownerPhone1').value, 
+        document.getElementById('upi1').value
+      )">View Details</button>
+
+      <!-- Mark as Rented Button -->
+      <button class="rented-btn" onclick="markAsRented('property1')">Mark as Rented</button>
+
+      <!-- Badge for Availability Status -->
+      <span class="badge" id="badge1">Available</span>
+    </div>
+  </div>
+
+  <!-- More property cards can be added in a similar way -->
+
+</section>
+
+<footer>
+  <p>Rentify © 2025 | Your trusted rental partner</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
